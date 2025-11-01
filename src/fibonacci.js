@@ -30,6 +30,25 @@ function fibs(n) {
   return arr;
 }
 
+/**
+ * Obtain the first n fibonacci numbers recursively
+ * @param {Integer} n greater than or equal to 0 
+ * @returns {Array} containing the first n fibonacci numbers 
+ */
+function fibsRec(n) {
+  if (n === 0)
+    return [];
+  if (n === 1)
+    return [0];
+  if (n === 2)
+    return [0, 1];
+
+  const priorFibs = fibsRec(n-1);
+  const f_curr = priorFibs.at(-1) + priorFibs.at(-2);
+  return priorFibs.concat([f_curr]);
+}
+
 export {
   fibs,
+  fibsRec,
 };
