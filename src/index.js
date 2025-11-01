@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 import {fibs, fibsRec} from "./fibonacci.js";
-import {mergeSort, merge} from "./mergeSort.js";
+import {mergeSort} from "./mergeSort.js";
 
-// console.log(
-//   fibs(8)
-// );
+console.log(
+  fibs(8)
+);
 
-// console.log(
-//   fibsRec(8)
-// );
+console.log(
+  fibsRec(8)
+);
 
-
-let A = [2,8,15,18];
-let B = [5,9,12,17];
-console.log(merge(A, B));
-
-A = [1,2,7,8];
-B = [3,5,6,9,10,12];
-console.log(merge(A,B));
+console.log(
+  mergeSort([]),
+  mergeSort([73]),
+  mergeSort([1, 2, 3, 4, 5]),
+  mergeSort([3, 2, 1, 13, 8, 5, 0, 1]),
+  mergeSort([105, 79, 100, 110]),
+);

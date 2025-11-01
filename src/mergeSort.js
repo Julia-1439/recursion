@@ -1,9 +1,21 @@
+/**
+ * Recursive merge sort
+ * @param {Array{Number}} arr 
+ * @returns {Array{Number}} a sorted copy of `arr`
+ */
 function mergeSort(arr) {
+  if (arr.length === 0 || arr.length === 1) {
+    return arr;
+  }
 
+  const mid = Math.floor(arr.length / 2);
+  const sortedHalf1 = mergeSort(arr.slice(0, mid));
+  const sortedHalf2 = mergeSort(arr.slice(mid));
+  return merge(sortedHalf1, sortedHalf2);
 }
 
 /**
- * 
+ * Utility function for recursive merge sort
  * @param {Array{Number}} sortedArr1 already sorted 
  * @param {Array{Number}} sortedArr2 already sorted
  * @returns {Array{Number}} a sorted array created by merging sortedArr1 and
@@ -41,5 +53,4 @@ function merge(sortedArr1, sortedArr2) {
 
 export {
   mergeSort,
-  merge, // for testing only
 };
